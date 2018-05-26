@@ -12,15 +12,41 @@
 article{height:500px;}
 header{height:150px;}
 footer{height:150px;}
+
 nav{
-position:absolute;
-bottom:0px;
-left:0px;
-right:0px;
-height:30px;
+
 }
 
-.grid-container{
+#logo{
+width:100px;
+text-align:center;
+}
+
+nav .grid-container{
+display:grid;
+grid-template-columns:repeat(2,auto);
+grid-template-rows:80px;
+justify-content: space-between;
+line-height:80px;
+
+}
+
+nav #rightHeader.grid-container{
+display:grid;
+grid-template-columns:repeat(4,auto);
+grid-column-gap:30px;
+}
+
+nav img,a{
+display:inline-block;
+padding-left:10px;
+padding-right:10px;
+}
+
+
+
+
+article .grid-container{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 grid-template-rows:repeat(3,1fr);
@@ -28,7 +54,7 @@ grid-row-gap:30px;
 grid-column-gap:30px;
 }
 
-.grid-container div{
+article .grid-container div{
 text-align:center;
 height:100px;
 }

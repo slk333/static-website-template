@@ -9,10 +9,15 @@
 
 
 *{border: solid gray 1px;}
-article{height:500px;}
-header{height:150px;}
-footer{height:150px;}
-
+header{// height:180px;
+background-color:rgb(250,250,250);
+}
+article{// height:500px;
+background-color:rgb(235,235,235);
+}
+footer{// height:180px;
+background-color:rgb(220,220,220);
+}
 nav{
 
 }
@@ -41,6 +46,11 @@ nav img,a{
 display:inline-block;
 padding-left:10px;
 padding-right:10px;
+
+}
+
+#hamburger{
+display:none
 }
 
 
@@ -219,9 +229,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+ // color: #1EAEDB; }
 a:hover {
-  color: #0FA0CE; }
+ // color: #0FA0CE; }
 
 
 /* Buttons
@@ -463,14 +473,42 @@ there.
 */
 
 
-/* Larger than mobile */
-@media (min-width: 400px) {}
+/*  Mobile */
+
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (max-width: 550px) {
+article .grid-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+
+}
+
+
+
+@media (max-width: 400px) {
+article .grid-container{
+grid-template-columns:repeat(1,1fr);
+grid-row-gap:0px;
+}
+
+}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (max-width: 700px) {
+nav #rightHeader.grid-container{
+display:none;
+}
+#hamburger{
+display:initial;
+padding-left:10px;
+padding-right:10px;
+width:80px;
+text-align:center;
+}
+
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}

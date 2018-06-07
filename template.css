@@ -8,7 +8,10 @@
 */
 
 
-*{border: solid gray 1px;}
+*{
+	 border: solid gray 1px;
+}
+	
 header{// height:180px;
 background-color:rgb(250,250,250);
 }
@@ -25,20 +28,22 @@ nav{
 #logo{
 width:100px;
 text-align:center;
+line-height:80px;
 }
+
 
 .nav-grid-container{
 display:grid;
 grid-template-columns:repeat(2,auto);
-grid-template-rows:80px;
+grid-template-rows:auto;
 justify-content: space-between;
-line-height:80px;
 }
 
 .rightHeader{
 display:grid;
 grid-template-columns:repeat(4,auto);
 grid-column-gap:30px;
+line-height:80px;
 }
 
 
@@ -47,14 +52,16 @@ display:inline-block;
 padding-left:10px;
 padding-right:10px;
 
+
+}
+a div{
+	border: none;
 }
 
-#hamburger{
+
+.hamburger{
 display:none;
-padding-left:10px;
-padding-right:10px;
-width:80px;
-text-align:center;
+border: none;
 }
 
 
@@ -82,8 +89,8 @@ height:100px;
 display:none; /* Liens masqués en affichage mobile  */
 grid-template-columns:repeat(1,1fr); /* un seul lien par ligne */
 }
-#hamburger{
-display:initial; /* on affiche le hamburger  */
+.hamburger{
+display:inline-block; /* on affiche le hamburger  */
 }
 #leftHeader{
 display:grid; /* le header de gauche qui contient le hamburger le vire à droite  */

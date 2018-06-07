@@ -35,16 +35,12 @@ justify-content: space-between;
 line-height:80px;
 }
 
-#rightHeader.grid-container{
+.rightHeader{
 display:grid;
 grid-template-columns:repeat(4,auto);
 grid-column-gap:30px;
 }
 
-#mobile-header-list.grid-container{
-display:grid;
-grid-template-columns:repeat(1,1fr);
-}
 
 nav img,a{
 display:inline-block;
@@ -54,7 +50,11 @@ padding-right:10px;
 }
 
 #hamburger{
-display:none
+display:none;
+padding-left:10px;
+padding-right:10px;
+width:80px;
+text-align:center;
 }
 
 
@@ -72,6 +72,50 @@ article .grid-container div{
 text-align:center;
 height:100px;
 }
+
+
+
+/* AFFICHAGE MOBILE */
+@media (max-width: 700px) {
+.rightHeader{
+/* Liens  */
+display:none; /* Liens masqués en affichage mobile  */
+grid-template-columns:repeat(1,1fr); /* un seul lien par ligne */
+}
+#hamburger{
+display:initial; /* on affiche le hamburger  */
+}
+#leftHeader{
+display:grid; /* le header de gauche qui contient le hamburger le vire à droite  */
+grid-template-columns:repeat(2,auto); 
+justify-content:space-between;
+}
+.nav-grid-container{
+grid-template-columns:repeat(1,1fr); /* la navbar ne contient qu'un seul lien par ligne  */
+}
+
+}
+
+/* AFFICHAGE MOBILE PETIT*/
+@media (max-width: 550px) {
+article .grid-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* AFFICHAGE MOBILE TRES PETIT*/
+@media (max-width: 400px) {
+article .grid-container{
+grid-template-columns:repeat(1,1fr);
+grid-row-gap:0px;
+}
+
+
+}
+
+
+
 
 
 
@@ -479,50 +523,6 @@ there.
 
 /*  Mobile */
 
-
-/* Smaller than phablet (also point when grid becomes active) */
-@media (max-width: 550px) {
-article .grid-container{
-grid-template-columns:repeat(2,1fr);
-}
-
-
-}
-
-
-/* Medium and small */
-@media (max-width: 400px) {
-article .grid-container{
-grid-template-columns:repeat(1,1fr);
-grid-row-gap:0px;
-}
-
-}
-
-/* Medium and small */
-@media (max-width: 700px) {
-nav #rightHeader.grid-container{
-display:none;
-
-}
-#hamburger{
-display:initial;
-padding-left:10px;
-padding-right:10px;
-width:80px;
-text-align:center;
-}
-#leftHeader{
-display:grid;
-grid-template-columns:repeat(2,auto);
-justify-content:space-between;
-}
-.nav-grid-container{
-display:grid;
-grid-template-columns:repeat(1,1fr);
-}
-
-}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}
